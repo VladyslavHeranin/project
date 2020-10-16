@@ -1,11 +1,14 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 main{
     display: flex;
     align-items: flex-start;
      width: 100%;
      justify-content: center;
-     height: 800px;
+     min-height: 800px;
 }
-
 
 .content{
     display: flex;
@@ -13,7 +16,7 @@ main{
     background-color: cadetblue;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    height: 600px;
+    min-height: 600px;
     flex-direction: column;
 }
 
@@ -21,87 +24,90 @@ main{
     display: flex;
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTh87QN4DkF7s92IFSfm7b7S4IR6kTdzIlhbw&usqp=CAU') ;
     width: 100%;
-    height: 25%;
+    height: 150px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     align-items: flex-end;
 }
 
 .data{
-margin: 10px;
-font-size: 24px;
-color: cornsilk;
-}
-
-
-.list{
-    display: flex;
-    flex-direction:column;
-    padding: 0px;
-    margin: 0px;
-}
-
-.item{
-   
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 50%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border:solid 2px whitesmoke;
-    background-color: rgb(66, 173, 66);
-}
-
-#x{
-    font-size: 25px;
-    color: whitesmoke;
-}
-
-#x:hover{
-    font-size: 27px;
-    color:rgb(116, 194, 116);
-    transition: 0.5s;
-}
-
-#y{
-    font-size: 25px;
-    color: green;
-}
-
-#y:hover{
-    font-size: 25px;
-    color: rgb(130, 190, 130);
-    transition: 0.5s;
-}
-
-#trash{
-    font-size: 23px;
-}
-
-#trash:hover{
-    font-size: 25px;
-    color: rgb(138, 9, 9);
-}
-
-.infolinethrough{
-    font-size: 22px;
-    color: rgb(255, 255, 255);
-    text-decoration: line-through; 
-}
-
-.info{
-    font-size: 22px;
-    color: rgb(255, 255, 255);
+   margin: 10px;
+   font-size: 24px;
+   color: cornsilk;
 }
 
 .toDOlist{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 75%;
+    display: flex;
+    background-color: rgb(50, 206, 226);
+    flex-direction: column;
+    min-height: 450px;
+    justify-content: space-between;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;   
+}
+
+.item{ 
+    margin: 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border:solid 2px whitesmoke;
+    background-color: rgba(255, 255, 255, 0.295); 
+    width: 100%;
+    color: rgb(46, 46, 46);
+    font-size: 20px;
+}
+
+.infoText{
+    min-height: 10px;
+    width: 330px;
+    word-wrap: break-word;
+    transform: 0.3s;
+}
+
+.infoText-check{
+   min-height: 10px;
+   text-decoration: line-through;
+   width: 330px;
+   word-wrap: break-word;
+   transform: 0.3s;
+}
+
+.delete{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 107, 107, 0.692);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.726);
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    transform: rotate(45deg);
+    transition: 1s;
+}
+
+.delete:hover{
+    transition: 0.1s;
+    transform: rotate(135deg);
+    background-color: red;
+    font-size: 35px;
+    color: whitesmoke;
+    width: 30px;
+    height: 30px;
+}
+
+.info{
+    font-size: 35px;
+    color: rgb(255, 255, 255); 
 }
 
 .input{
@@ -114,14 +120,24 @@ height: 75%;
 }
 
 .button{
+    display: flex;
     height:100%;
-    width: 12%;
+    width: 11%;
     outline: none;
     border: none;
     border: solid 1px #f2f2f2;
     border-radius: 50%;
     margin-left: 5px;
     font-size: 33px;
+    justify-content:center;
+    color: rgb(71, 71, 71);
+    transition: 1s;
+}
+
+.button:hover{
+    background-color: rgb(110, 153, 202);
+    color: seashell;
+    transition: 0.3s;
 }
 
 .text{

@@ -1,90 +1,41 @@
-let list = document.getElementById("list");
-let button = document.getElementById("button");
-let input = document.getElementById('input');
-let i = document.getElementById('item')
+let list = document.querySelector("#list");
+let button = document.querySelector("#button");
+let input = document.querySelector('#input');
 
-let check = "fa fa-check-circle-o";
-let unCheck = "fa fa-circle-o"
-let line = "linethrough"
+function createElem(text) {
+    let newElem = document.createElement("div");
+    newElem.className = "item";
 
-let LIST = [];
-let id = 0;
+    let info = document.createElement("p");
+    info.className ="infoText";
+    info.textContent = text.trim();
 
-function atToDoList(atToDo, id, done, trash) {
+    let deletButton = document.createElement("div");
+    deletButton.className = "delete";
+    deletButton.textContent = "+"
 
-    if (trash) {
-        return;
+    newElem.appendChild(info);
+    newElem.appendChild(deletButton);
+
+    deletButton.addEventListener('click', () => {
+        list.removeChild(newElem);
+    })
+
+    info.onclick = (event) => {
+        event.target.classList.toggle('infoText-check');
+    }
+
+    list.appendChild(newElem);
 }
 
-    let DONE = done ? check : unCheck;
-    let LINE = done ? line : "";
 
-    const item = `
-<li class="item" id="item">
-<i class='${DONE}' aria-hidden="true" id="${id}"></i>
-<p class="info${LINE}" id="info">${atToDo}</p>
-<i class="fa fa-trash-o" aria-hidden="true" id="${id}"></i>
-</li>
-`
-    const position ="beforeend";
-
-    list.insertAdjacentHTML(position, item);
-}
-
-document.addEventListener('keyup', function (even) {
-
-    if (event.keyCode == 13) {
-        const toDo = input.value;
-
-        if (toDo) {
-            atToDoList(toDo, id, false, false);
-
-            LIST.push({
-                name: toDo,
-                id: id,
-                done: false,
-                trash: false 
-            });
-            id++;  
-        }
-     input.value = "";
-    }   
-});
-
-
-
-
-
-
-
-// function completeToDo(element) {
-//     element.classList.toggle(check);
-//     element.classList.toggle(unCheck);
-//     element.perentNode.querySelector('.text').classList.toggle(line);
-
-//     LIST[element.id].done = LIST[element.id].done ? false : true;
-// }
-
-
-
-// function removeToDo(element) {
-//     element.parentNode.parentNode.removeChild(element.parentNode)
-
-//     LIST[element.id].trash = true ;
-// }
-
-
-// list.addEventListener("click", function(event) {
-//     const element = event.target;
-
-//      const elementJob = element.attributes.job.value;
-
-//     if (elementJob == "complete") {
-//         completeToDo(element);
-//     } else if (elementJob == "remove") {
-//         removeToDo(element);
-//     } 
-// });
-
+button.addEventListener("click", () => {
+    if (input.value === "") {
+        alert("please enter text")
+    } else {
+        createElem(input.value);
+        input.value = ""
+    };
+})
 
 
