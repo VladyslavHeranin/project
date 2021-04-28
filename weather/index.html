@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link rel="stylesheet" href="/style/listStyle.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div id="button-down" class="button-down">
+            &#8592;
+        </div>
+        <main class="main" id="item">
+         
+            <div class="conteyner">
+
+                <h4 class="main__second-title">Kyiv</h4>
+                <div class="main__second">
+                    <div>
+                        <div class="main__second-img">
+                            <i class="fa fa-cloud" style="font-size:100px;color:rgb(226, 226, 226)"></i>
+                        </div>
+
+                        <div class="main__second-state">cloud</div>
+                        <div class="main__second-piont">temp :</div>
+                        <div class="value__blok">
+                            <div class="icon__block">
+                                <div class="parameter" id="main__second-humidity">10</div>
+                                <i class="fa fa-thermometer-2" style="font-size:20px"></i>
+                            </div>
+                            <div class="icon__block">
+                                <div class="parameter" id="main__second-data">10</div>
+                                <i class="fa fa-flag-o" style="font-size:24px"></i>
+                            </div>
+                            <div class="icon__block">
+                                <div class="parameter" id="main__second-clouds">80</div>
+                                <i class="fa fa-cloud" style="font-size:20px"></i>
+                            </div>
+                        </div>
+                        <div class="forecast">
+                            <div class="forecast__item">
+                                <p class="day">
+                                    MON
+                                </p>
+                                <i class="fa fa-cloud" style="font-size:30px;color:rgb(226, 226, 226)"></i>
+                                <div class="deg">20 c</div>
+                            </div>
+                            <div class="forecast__item">
+                                <p class="day">
+                                    TUS
+                                </p>
+                                <i class="fa fa-cloud" style="font-size:30px;color:rgb(226, 226, 226)"></i>
+                                <div class="deg">20 c</div>
+                            </div>
+                            <div class="forecast__item">
+                                <p class="day">
+                                    THE
+                                </p>
+                                <i class="fa fa-cloud" style="font-size:30px;color:rgb(226, 226, 226)"></i>
+                                <div class="deg">20 c</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <button class="button" id="but">+</button>
+                        <input type="text" class="text" placeholder="Enter city:" id="inp" autocomplete="off" autofocus>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main class="main" id="item">
+            
+            <div class="conteyner">
+                <div class="img">
+                    <div class="data" id="data">25 SEPTEMBER</div>
+                </div>
+                <div class="toDOlist">
+                    <ul class="list" id="list"></ul>
+                    <div class="input">
+                        <button class="button" id="button">+</button>
+                        <input type="text" class="text" placeholder="Enter item" id="input" autocomplete="off"
+                            autofocus>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/mainJS/slider.js"></script>
+    <script src="/mainJS/toDoList.js"></script>
+    <script src="/mainJS/weather.js"></script>
+</body>
+
+</html>
