@@ -3,7 +3,7 @@ let weatherInput  = document.querySelector('#inp')
 let weatherButton = document.querySelector('#but')
 
 function cityName(city) {
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4081593430fcd4b816fd9b82f5b49e5b')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4081593430fcd4b816fd9b82f5b49e5b')
         .then(function (resp) { return resp.json() })
         .then(function (data) {
             console.log("data", data );
