@@ -6,7 +6,7 @@ function cityName(city) {
     fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4081593430fcd4b816fd9b82f5b49e5b')
         .then(function (resp) { return resp.json() })
         .then(function (data) {
-            console.log(data);
+            console.log("data", data );
             document.querySelector(".main__second-title").innerHTML = data.name
             document.querySelector(".main__second-piont").innerHTML = "temp : " + Math.round(data.main.temp - 273) + "&deg;"
             document.querySelector(".main__second-state").innerHTML = data.weather[0]["main"];
