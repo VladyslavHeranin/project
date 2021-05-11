@@ -16,7 +16,7 @@ function cityName(city) {
             document.querySelector("#main__second-humidity").innerHTML = data.main.humidity
             document.querySelector("#main__second-clouds").innerHTML = data.clouds.all
         }).catch(function (e) {
-            alert("The name of the city is entered incorrectly", e)
+            concole.error(e , "The name of the city is entered incorrectly")
         })
 }
 
