@@ -1,9 +1,10 @@
 
 let weatherInput  = document.querySelector('#inp')
 let weatherButton = document.querySelector('#but')
+const wetherId = "4081593430fcd4b816fd9b82f5b49e5b"
 
 function cityName(city) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=4081593430fcd4b816fd9b82f5b49e5b')
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${wetherId}`)
         .then(function (resp) { return resp.json() })
         .then(function (data) {
             console.log("data", data );
