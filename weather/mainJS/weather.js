@@ -1,10 +1,10 @@
 
 let weatherInput  = document.querySelector('#inp')
 let weatherButton = document.querySelector('#but')
-const wetherId = "4081593430fcd4b816fd9b82f5b49e5b"
+const key = "4081593430fcd4b816fd9b82f5b49e5b"
 
 function cityName(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${wetherId}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
         .then(function (resp) { return resp.json() })
         .then(function (data) {
             document.querySelector(".main__second-title").innerHTML = data.name
@@ -15,6 +15,9 @@ function cityName(city) {
             document.querySelector("#main__second-data").innerHTML = data.wind.speed
             document.querySelector("#main__second-humidity").innerHTML = data.main.humidity
             document.querySelector("#main__second-clouds").innerHTML = data.clouds.all
+        }).catch(function (e) {
+            console.error("error", e)
+            alert("The name of the city is entered incorrectly")
         })
 }
 
